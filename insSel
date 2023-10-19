@@ -1,10 +1,10 @@
-INSERT INTO ingredients (NAME)
+INSERT INTO ingredients (NAME , PRICE , GLUTEN_FREE)
 VALUES
-    ('eggs'),
-    ('bread'),
-    ('beef patty'),
-    ('lettuce'),
-    ('yogurt');
+    ('eggs' , 1.99 , true),
+    ('bread' , 2.49 , false),
+    ('beef patty' , 3.99 , false),
+    ('lettuce' , 1.99 , true),
+    ('yogurt' , 1.49 , true);
 
 SELECT NAME FROM ingredients;
 
@@ -13,8 +13,5 @@ SELECT NAME , PRICE FROM ingredients;
 SELECT * FROM ingredients
 ORDER BY NAME;
 
-ALTER TABLE ingredients
-ADD COLUMN GLUTEN_FREE BOOLEAN DEFAULT true;
-
 SELECT * FROM ingredients
-ORDER BY GLUTEN_FREE;
+ORDER BY GLUTEN_FREE DESC , NAME;
